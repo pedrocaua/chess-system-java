@@ -30,9 +30,19 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 	
 	
 	private void iniciarPartida() {
-		coloqueNovaPeça('b', 6, new Torre(tabuleiro, Cor.BRANCO));
-		coloqueNovaPeça('e', 8, new Rei(tabuleiro, Cor.PRETO));
-		coloqueNovaPeça('e', 1, new Rei(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('c', 1, new Torre(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('c', 2, new Torre(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('d', 2, new Torre(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('e', 2, new Torre(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('e', 1, new Torre(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('d', 1, new Rei(tabuleiro, Cor.BRANCO));
+
+		coloqueNovaPeça('c', 7, new Torre(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('c', 8, new Torre(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('d', 7, new Torre(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('e', 7, new Torre(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('e', 8, new Torre(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('d', 8, new Rei(tabuleiro, Cor.PRETO));
 	}
 	
 	
