@@ -19,7 +19,7 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 		for (int i=0; i<tabuleiro.getLinhas(); i++) {
 			for (int j=0; j<tabuleiro.getColunas(); j++) {
 				mat[i][j] = (PeçaDeXadrez) tabuleiro.peça(i, j);
-			}
+			}	
 		}
 		return mat;
 	}
