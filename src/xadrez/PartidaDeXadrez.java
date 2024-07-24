@@ -44,6 +44,9 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 		if (!tabuleiro.temUmaPeça(posicao)) {
 			throw new ExcecaoDoXadrez("Não existe peça na posição de origem");
 		}
+		if (!tabuleiro.peça(posicao).existeAlgumMovimentoPossivel()) {
+			throw new ExcecaoDoXadrez("Não existe movimentos possiveis para peça escolhida");
+		}
 	}
 	
 	private void coloqueNovaPeça(char coluna, int linha, PeçaDeXadrez peça) {
