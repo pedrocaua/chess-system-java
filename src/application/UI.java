@@ -54,17 +54,31 @@ public class UI {
 		for (int i = 0; i < peças.length; i++) {
 			System.out.print((8 - i) + " ");
 			for (int j = 0; j < peças.length; j++) {
-				printPeça(peças[i][j]);
+				printPeça(peças[i][j], false);
 			}
 			System.out.println();
 		}
 		System.out.println("  a b c d e f g h");
-
+	}
+	
+	public static void printTabuleiro(PeçaDeXadrez[][] peças, boolean[][] possiveisMovimentos) {
+		for (int i = 0; i < peças.length; i++) {
+			System.out.print((8 - i) + " ");
+			for (int j = 0; j < peças.length; j++) {
+				printPeça(peças[i][j], possiveisMovimentos[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println("  a b c d e f g h");
 	}
 
-	private static void printPeça(PeçaDeXadrez peça) {
+	private static void printPeça(PeçaDeXadrez peça, boolean fundo) {
+		if (fundo) {
+			System.out.print(ANSI_BLUE_BACKGROUND);
+		}
+		
 		if (peça == null) {
-			System.out.print("-");
+			System.out.print("-" + ANSI_RESET);
 		} 
 		else {
 			if (peça.getCor() == Cor.BRANCO) {

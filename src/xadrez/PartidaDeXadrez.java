@@ -25,6 +25,12 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 		return mat;
 	}
 	
+	public boolean[][] possiveisMovimentos(PosicaoDeXadrez posicaoInicial){
+		Posicao posicao = posicaoInicial.posicionar();
+		validarPosicaoInicial(posicao);
+		return tabuleiro.peça(posicao).possiveisMovimentos(); 
+	}
+	
 	public PeçaDeXadrez executarMovimentoDeXadrez(PosicaoDeXadrez posicaoInicial, PosicaoDeXadrez posicaoDestino) {
 		Posicao inicial = posicaoInicial.posicionar();
 		Posicao destino = posicaoDestino.posicionar();
