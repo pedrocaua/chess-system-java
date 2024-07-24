@@ -1,6 +1,7 @@
 package xadrez;
 
 import tabuleiroDeXadrez.Peça;
+import tabuleiroDeXadrez.Posicao;
 import tabuleiroDeXadrez.Tabuleiro;
 
 public abstract class PeçaDeXadrez extends Peça {
@@ -14,6 +15,11 @@ public abstract class PeçaDeXadrez extends Peça {
 
 	public Cor getCor() {				//não a set, pos a cor só pode ser acessada e não alterada
 		return cor;
+	}
+	
+	protected boolean existePeçaAdversaria(Posicao posicao) {
+		PeçaDeXadrez p = (PeçaDeXadrez)getTabuleiro().peça(posicao);
+		return p != null && p.getCor() != cor;
 	}
 
 
