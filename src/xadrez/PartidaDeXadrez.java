@@ -1,5 +1,8 @@
 package xadrez;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import tabuleiroDeXadrez.Peça;
 import tabuleiroDeXadrez.Posicao;
 import tabuleiroDeXadrez.Tabuleiro;
@@ -11,6 +14,9 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 	private int vez;
 	private Cor jogadorAtual;
 	private Tabuleiro tabuleiro;
+	
+	private List<Peça> peçasNoTabuleiro = new ArrayList<>();
+	private List<Peça> peçasCapturadas = new ArrayList<>();
 	
 	public PartidaDeXadrez() {
 		tabuleiro = new Tabuleiro(8, 8);		//dimensão do tabuleiro
@@ -54,10 +60,16 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 		return (PeçaDeXadrez)peçaCapturada;
 	}
 	
-	private Peça façaMover(Posicao inicial, Posicao destino) {
+	private Peça façaMover(Posicao inicial, Posicao destino) {		//tira da origem e põe no destino
 		Peça p = tabuleiro.removerPeça(inicial);
 		Peça peçaCapturada = tabuleiro.removerPeça(destino);
 		tabuleiro.LugarDaPeça(p, destino);
+		
+		if (peçaCapturada != null) {
+			peçasNoTabuleiro.remove(peçaCapturada);
+			peçasCapturadas.add(peçaCapturada);
+		}
+		
 		return peçaCapturada;
 	}
 	
@@ -86,9 +98,8 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 	
 	private void coloqueNovaPeça(char coluna, int linha, PeçaDeXadrez peça) {
 		 tabuleiro.LugarDaPeça(peça, new PosicaoDeXadrez(coluna, linha).posicionar());
+		 peçasNoTabuleiro.add(peça);
 	}
-	
-	
 	
 	private void iniciarPartida() {
 		coloqueNovaPeça('c', 1, new Torre(tabuleiro, Cor.BRANCO));
