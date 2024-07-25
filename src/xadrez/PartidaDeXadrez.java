@@ -8,12 +8,25 @@ import xadrez.peças.Torre;
 
 public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 
+	private int vez;
+	private Cor jogadorAtual;
 	private Tabuleiro tabuleiro;
 	
 	public PartidaDeXadrez() {
 		tabuleiro = new Tabuleiro(8, 8);		//dimensão do tabuleiro
+		vez = 1;
+		jogadorAtual = Cor.BRANCO;
 		iniciarPartida();
 	}
+	
+	public int getVez() {
+		return vez;
+	}
+	
+	public Cor getJogadorAtual() {
+		return jogadorAtual;
+	}
+	
 	
 	public PeçaDeXadrez[][] getPeças(){
 		PeçaDeXadrez[][] mat = new PeçaDeXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
@@ -37,6 +50,7 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 		validarPosicaoInicial(inicial);
 		validarPosicaoDestino(inicial, destino);
 		Peça peçaCapturada = façaMover(inicial, destino);
+		proximoVez();
 		return (PeçaDeXadrez)peçaCapturada;
 	}
 	
@@ -51,6 +65,9 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 		if (!tabuleiro.temUmaPeça(posicao)) {
 			throw new ExcecaoDoXadrez("Não existe peça na posição de origem");
 		}
+		if (jogadorAtual !=  ((PeçaDeXadrez)tabuleiro.peça(posicao)).getCor()) {
+			throw new ExcecaoDoXadrez("A peça escolhida não é sua");
+		}
 		if (!tabuleiro.peça(posicao).existeAlgumMovimentoPossivel()) {
 			throw new ExcecaoDoXadrez("Não existe movimentos possiveis para peça escolhida");
 		}
@@ -60,6 +77,11 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 		if (!tabuleiro.peça(inicial).possiveisMovimentos(destino)) {
 			throw new ExcecaoDoXadrez("A peça escolhida não pode se mover para a posição de destino");
 		}
+	}
+	
+	private void proximoVez() {
+		vez++;
+		jogadorAtual = (jogadorAtual == Cor.BRANCO) ? Cor.PRETO : Cor.BRANCO;
 	}
 	
 	private void coloqueNovaPeça(char coluna, int linha, PeçaDeXadrez peça) {
