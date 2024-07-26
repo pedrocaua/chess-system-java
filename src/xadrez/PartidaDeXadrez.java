@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import tabuleiroDeXadrez.Peça;
 import tabuleiroDeXadrez.Posicao;
 import tabuleiroDeXadrez.Tabuleiro;
+import xadrez.peças.Peao;
 import xadrez.peças.Rei;
 import xadrez.peças.Torre;
 
@@ -192,12 +193,31 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 	}
 	
 	private void iniciarPartida() {
-		coloqueNovaPeça('h', 7, new Torre(tabuleiro, Cor.BRANCO));
-		coloqueNovaPeça('d', 1, new Torre(tabuleiro, Cor.BRANCO));
-		coloqueNovaPeça('e', 1, new Rei(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('a', 7, new Torre(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('e', 1, new Torre(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('h', 1, new Rei(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('a', 2, new Peao(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('b', 2, new Peao(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('c', 2, new Peao(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('d', 2, new Peao(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('e', 2, new Peao(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('f', 2, new Peao(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('g', 2, new Peao(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('h', 2, new Peao(tabuleiro, Cor.BRANCO));
+		
 
-		coloqueNovaPeça('b', 8, new Torre(tabuleiro, Cor.PRETO));
-		coloqueNovaPeça('a', 8, new Rei(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('a', 8, new Torre(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('e', 8, new Rei(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('h', 8, new Torre(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('a', 7, new Peao(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('b', 7, new Peao(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('c', 7, new Peao(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('d', 7, new Peao(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('e', 7, new Peao(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('f', 7, new Peao(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('g', 7, new Peao(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('h', 7, new Peao(tabuleiro, Cor.PRETO));
+		
 	}
 	
 	

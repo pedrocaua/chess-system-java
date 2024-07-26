@@ -18,6 +18,10 @@ public abstract class PeçaDeXadrez extends Peça {
 		return cor;
 	}
 	
+	public int getContarMovimentos() {
+		return contarMovimentos;
+	}
+	
 	public void aumentarContagemMovimentos() {
 		contarMovimentos++;
 	}
