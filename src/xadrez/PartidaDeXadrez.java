@@ -85,7 +85,8 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 	}
 	
 	private Peça façaMover(Posicao inicial, Posicao destino) {		//tira da origem e põe no destino
-		Peça p = tabuleiro.removerPeça(inicial);
+		PeçaDeXadrez p = (PeçaDeXadrez)tabuleiro.removerPeça(inicial);
+		p.aumentarContagemMovimentos();
 		Peça peçaCapturada = tabuleiro.removerPeça(destino);
 		tabuleiro.LugarDaPeça(p, destino);
 		
@@ -98,7 +99,8 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 	}
 	
 	private void desfazerMovimento(Posicao inicial, Posicao destino, Peça peçaCapturada) {
-		Peça p = tabuleiro.removerPeça(destino);
+		PeçaDeXadrez p = (PeçaDeXadrez)tabuleiro.removerPeça(destino);
+		p.diminuirContagemMovimentos();
 		tabuleiro.LugarDaPeça(p, destino);
 		
 		if (peçaCapturada != null) {
