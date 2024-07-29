@@ -99,6 +99,24 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 			peçasCapturadas.add(peçaCapturada);
 		}
 		
+		// # Movimento especial ROQUE ao lado do rei
+		if (p instanceof Rei && destino.getColuna() == inicial.getColuna()+ 2) {
+			Posicao inicialT = new Posicao(inicial.getLinha(), inicial.getColuna() + 3);
+			Posicao destinoT = new Posicao(inicial.getLinha(), inicial.getColuna() + 1);
+			PeçaDeXadrez torre = (PeçaDeXadrez)tabuleiro.removerPeça(inicialT);
+			tabuleiro.LugarDaPeça(torre, destinoT);
+			torre.aumentarContagemMovimentos();			
+		}
+		
+		// # Movimento especial ROQUE ao lado da rainha
+		if (p instanceof Rei && destino.getColuna() == inicial.getColuna() - 2) {
+			Posicao inicialT = new Posicao(inicial.getLinha(), inicial.getColuna() - 4);
+			Posicao destinoT = new Posicao(inicial.getLinha(), inicial.getColuna() - 1);
+			PeçaDeXadrez torre = (PeçaDeXadrez) tabuleiro.removerPeça(inicialT);
+			tabuleiro.LugarDaPeça(torre, destinoT);
+			torre.aumentarContagemMovimentos();
+		}
+		
 		return peçaCapturada;
 	}
 	
@@ -111,6 +129,24 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 			tabuleiro.LugarDaPeça(peçaCapturada, destino);
 			peçasCapturadas.remove(peçaCapturada);
 			peçasNoTabuleiro.add(peçaCapturada);
+		}
+	
+		// # Movimento especial ROQUE ao lado do rei
+		if (p instanceof Rei && destino.getColuna() == inicial.getColuna()+ 2) {
+			Posicao inicialT = new Posicao(inicial.getLinha(), inicial.getColuna() + 3);
+			Posicao destinoT = new Posicao(inicial.getLinha(), inicial.getColuna() + 1);
+			PeçaDeXadrez torre = (PeçaDeXadrez)tabuleiro.removerPeça(destinoT);
+			tabuleiro.LugarDaPeça(torre, inicialT);
+			torre.diminuirContagemMovimentos();			
+		}
+		
+		// # Movimento especial ROQUE ao lado da rainha
+		if (p instanceof Rei && destino.getColuna() == inicial.getColuna() - 2) {
+			Posicao inicialT = new Posicao(inicial.getLinha(), inicial.getColuna() - 4);
+			Posicao destinoT = new Posicao(inicial.getLinha(), inicial.getColuna() - 1);
+			PeçaDeXadrez torre = (PeçaDeXadrez) tabuleiro.removerPeça(destinoT);
+			tabuleiro.LugarDaPeça(torre, inicialT);
+			torre.diminuirContagemMovimentos();
 		}
 	}
 	
@@ -200,7 +236,7 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 		coloqueNovaPeça('b', 1, new Cavalo(tabuleiro, Cor.BRANCO));
 		coloqueNovaPeça('c', 1, new Bispo(tabuleiro, Cor.BRANCO));
 		coloqueNovaPeça('d', 1, new Rainha(tabuleiro, Cor.BRANCO));
-		coloqueNovaPeça('e', 1, new Rei(tabuleiro, Cor.BRANCO));
+		coloqueNovaPeça('e', 1, new Rei(tabuleiro, Cor.BRANCO, this));
 		coloqueNovaPeça('f', 1, new Bispo(tabuleiro, Cor.BRANCO));
 		coloqueNovaPeça('g', 1, new Cavalo(tabuleiro, Cor.BRANCO));
 		coloqueNovaPeça('h', 1, new Torre(tabuleiro, Cor.BRANCO));
@@ -218,7 +254,7 @@ public class PartidaDeXadrez {			//classe onde fica as regras do jogo de xadrez
 		coloqueNovaPeça('b', 8, new Cavalo(tabuleiro, Cor.PRETO));		
 		coloqueNovaPeça('c', 8, new Bispo(tabuleiro, Cor.PRETO));
 		coloqueNovaPeça('d', 8, new Rainha(tabuleiro, Cor.PRETO));
-		coloqueNovaPeça('e', 8, new Rei(tabuleiro, Cor.PRETO));
+		coloqueNovaPeça('e', 8, new Rei(tabuleiro, Cor.PRETO, this));
 		coloqueNovaPeça('f', 8, new Bispo(tabuleiro, Cor.PRETO));
 		coloqueNovaPeça('g', 8, new Cavalo(tabuleiro, Cor.PRETO));
 		coloqueNovaPeça('h', 8, new Torre(tabuleiro, Cor.PRETO));
