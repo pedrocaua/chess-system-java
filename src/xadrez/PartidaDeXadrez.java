@@ -123,7 +123,7 @@ public class PartidaDeXadrez { // classe onde fica as regras do jogo de xadrez
 			throw new IllegalStateException("Não a peça para ser promovida");
 		}
 		if (!type.equals("B") && !type.equals("C") && !type.equals("T") && !type.equals("Q")) {
-			throw new InvalidParameterException("Tipo invalido para promoção");
+			return promover;
 		}
 		
 		Posicao pos = promover.getPosicaoDeXadrez().posicionar();
