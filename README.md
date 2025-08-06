@@ -1,39 +1,39 @@
-♟️ Chess System em Java
+# ♟️ Chess System em Java
 
 Projeto de sistema de xadrez totalmente implementado em Java com foco em lógica de programação e princípios da Programação Orientada a Objetos.
 
-📌 Funcionalidades
+## 📌 Funcionalidades
 
 - Regras completas do jogo de xadrez (movimentação, captura, xeque, xeque-mate).
 - Exibição em modo console (terminal).
 - Validação de movimentos ilegais.
 - Controle de turno e lógica de fim de jogo.
 
-🧠 Conceitos Aplicados
+## 🧠 Conceitos Aplicados
 Este projeto foi construído como exercício prático de fundamentos de Java e programação orientada a objetos. Os principais conceitos utilizados incluem:
 
-  🔁 Herança e Polimorfismo
-  🔁 Estruturas de Controle (Condição e Repetição)
-  🔒 Encapsulamento
-  🧱 Abstração
-  📦 Estruturas de Dados
+  #### 🔁 Herança e Polimorfismo
+  #### 🔁 Estruturas de Controle (Condição e Repetição)
+  #### 🔒 Encapsulamento
+  #### 🧱 Abstração
+  #### 📦 Estruturas de Dados
 
-🛠️ Tecnologias utilizadas
+## 🛠️ Tecnologias utilizadas
 
 - Java
 - Programação Orientado a Objetos
 - Tratamento de exceções
 - Maven (estrutura de projeto)
 
-🎯 Objetivo
+## 🎯 Objetivo
 
 Projeto desenvolvido para praticar lógica, abstração e estruturação de código orientado a objetos em Java, sem frameworks externos.
 
-📸 Demonstração
+## 📸 Demonstração
 
 Em breve...
 
-🚀 Como executar
+## 🚀 Como executar
 
 --- 1. Clone o repositório:
 
@@ -45,8 +45,8 @@ git clone https://github.com/pedrocaua/chess-system-java.git
 
 --- 3. Execute a classe Program.java.
 
-📸 Exemplo no terminal
-
+## 📸 Exemplo no terminal
+```
 Vez: 1
 Esperando Jogador: {Branco ou Preto}
 
@@ -62,5 +62,6 @@ Origem: {Letra/numero}   digitar letra e numero para que selecione a peça de or
 2  P P P P P P P P  2
 1  R N B Q K B N R  1
    a b c d e f g h
+```
 
 Destino: {Letra/numero}   digitar letra e numero para selecionar a casa que a peça em questão irá se mover
