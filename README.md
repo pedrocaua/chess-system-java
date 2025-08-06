@@ -12,11 +12,11 @@ Projeto de sistema de xadrez totalmente implementado em Java com foco em lógica
 ## 🧠 Conceitos Aplicados
 Este projeto foi construído como exercício prático de fundamentos de Java e programação orientada a objetos. Os principais conceitos utilizados incluem:
 
-  #### 🔁 Herança e Polimorfismo
-  #### 🔁 Estruturas de Controle (Condição e Repetição)
-  #### 🔒 Encapsulamento
-  #### 🧱 Abstração
-  #### 📦 Estruturas de Dados
+  ##### 🔁 Herança e Polimorfismo
+  ##### 🔁 Estruturas de Controle (Condição e Repetição)
+  ##### 🔒 Encapsulamento
+  ##### 🧱 Abstração
+  ##### 📦 Estruturas de Dados
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -62,6 +62,7 @@ Origem: {Letra/numero}   digitar letra e numero para que selecione a peça de or
 2  P P P P P P P P  2
 1  R N B Q K B N R  1
    a b c d e f g h
-```
+
 
 Destino: {Letra/numero}   digitar letra e numero para selecionar a casa que a peça em questão irá se mover
+```
