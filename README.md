@@ -35,13 +35,13 @@ Em breve...
 
 🚀 Como executar
 
-- 1. Clone o repositório:
+--- 1. Clone o repositório:
 
 ```bash
 git clone https://github.com/pedrocaua/chess-system-java.git
 ```
 
--- 2. Abra em uma IDE como Eclipse ou IntelliJ.
+--- 2. Abra em uma IDE como Eclipse ou IntelliJ.
 
 --- 3. Execute a classe Program.java.
 
